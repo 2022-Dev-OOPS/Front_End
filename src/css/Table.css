@@ -1,0 +1,35 @@
+
+.box {
+  position: relative;
+  overflow: auto;
+  height: 310px;
+  width: 420px;
+  margin: 10px;
+  background-color: white;
+
+}
+.table-title {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  padding: 10px;
+  font-size: 1.2rem;
+}
+
+table {
+  border-collapse: collapse;
+  width: 400px;
+  margin: 0 auto;
+}
+
+td {
+  border: 1px solid gray;
+  padding: 8px;
+}
+
+th {
+  background-color: #f1f1f1;
+  font-size: 1.2rem;
+  border: 1px solid gray;
+  padding: 8px;
+}
