@@ -1,5 +1,7 @@
 
 .box {
+  border: none;
+  border-radius: 5px;
   position: relative;
   overflow: auto;
   height: 310px;
