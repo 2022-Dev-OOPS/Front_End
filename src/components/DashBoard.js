@@ -3,7 +3,7 @@ import axios from 'axios';
 import '../css/DashBoard.css';
 import SubComponent from './SubComponent';
 import tp from '../img/tp.jpg';
-import Table  from  './Table';
+import Table  from  './TableComponent';
 import ImageComponent from './ImageComponent';
 
 function Dashboard() {

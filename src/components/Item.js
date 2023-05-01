@@ -1,59 +1,86 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import Box from '@mui/material/Box';
+import React, { useState, useEffect } from 'react';
 import tp from '../img/tp.jpg';
-import Table  from  './Table';
-import ImageComponent from './ImageComponent';
-import SubComponent from './SubComponent';
-
-function Item(props) {
-  const { sx, ...other } = props;
-  return (
-    <Box
-      sx={{
-        p: 1,
-        m: 1,
-        bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#101010' : 'grey.100'),
-        color: (theme) => (theme.palette.mode === 'dark' ? 'grey.300' : 'grey.800'),
-        border: '1px solid',
-        borderColor: (theme) =>
-          theme.palette.mode === 'dark' ? 'grey.800' : 'grey.300',
-        borderRadius: 2,
-        fontSize: '0.875rem',
-        fontWeight: '700',
-        ...sx,
-      }}
-      {...other}
-    />
-  );
-}
-
-Item.propTypes = {
-  /**
-   * The system prop that allows defining system overrides as well as additional CSS styles.
-   */
-  sx: PropTypes.oneOfType([
-    PropTypes.arrayOf(
-      PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool]),
-    ),
-    PropTypes.func,
-    PropTypes.object,
-  ]),
-};
+import Table  from  './TableComponent';
+import axios from 'axios';
+import Card from '@mui/material/Card';
+import { Typography } from '@mui/material';
+import CardMedia from '@mui/material/CardMedia';
+import TableComponent from './TableComponent';
 
 export default function FlexGrow() {
+  const [imagePower, setImagePower] = useState('NULL'); // power 초기값은 'NULL'로 설정
+  const [specialAlerts, setSpecialAlerts] = useState([]);
+
+  useEffect(() => {
+    axios.get(`${process.env.REACT_APP_API_URL}/api/load`)
+      .then(response => {
+        setSpecialAlerts(response.data.data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    axios.get(`${process.env.REACT_APP_API_URL}/api/power`)
+      .then(response => {
+        setImagePower(response.data.power);
+        console.log('LogTEST : '+response.data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }, []);
   return (
-    <div style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'left' }}>
-      <Box
-        sx={{ display: 'flex', p: 1, bgcolor: 'background.paper', borderRadius: 1, m: '16px 16px 16px 32px' }}
-      >
-        <SubComponent title="태풍 경로" imageSrc={tp} width="450px" />
-      </Box>
-      <Box
-        sx={{ display: 'flex', p: 1, bgcolor: 'background.paper', borderRadius: 1, m: '16px' }}
-      >
-        <Item sx={{ flexGrow: 1 }}>Item 1</Item>
-      </Box>
+    <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <div style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
+      <Card sx={{ width: '450px', height: '310px', m: '16px', ml : '32px' }}>
+        <Typography variant="h5" component="div" fontWeight="bold" sx={{ m: 2, textAlign: 'left'}}>
+          태풍 경로
+        </Typography>
+        <CardMedia
+          component="img"
+          image={tp}
+          alt="태풍 사진"
+        />
+      </Card>
+      <Card sx={{ width: '260px', height: '310px', m: '16px'}}>
+        <Typography variant="h5" component="div" fontWeight="bold" sx={{ m: 2, textAlign: 'left'}}>
+          부산
+        </Typography>
+        <CardMedia
+          component="video"
+          src="https://www.w3schools.com/html/mov_bbb.mp4"
+          autoPlay
+          controls
+        />
+      </Card>
+      <Card sx={{ width: '260px', height: '310px', m: '16px' }}>
+        <Typography variant="h5" component="div" fontWeight="bold" sx={{ m: 2, textAlign: 'left'}}>
+          제주
+        </Typography>
+        <CardMedia
+          component="video"
+          src="https://www.w3schools.com/html/mov_bbb.mp4"
+          autoPlay
+          controls
+        />
+      </Card>
+      <Card sx={{ width: '260px', height: '310px', m: '16px' }}>
+      <Typography variant="h5" component="div" fontWeight="bold" sx={{ m: 2, textAlign: 'left'}}>
+        부산
+      </Typography>
+      <CardMedia
+        component="video"
+        src="https://www.w3schools.com/html/mov_bbb.mp4"
+        autoPlay
+        controls
+      />
+    </Card>
     </div>
+    <Card sx={{ width: '504px', height: '310px', m: '16px' }}>
+      <TableComponent data={specialAlerts} />
+    </Card>
+  </div>
   );
 }

@@ -24,7 +24,7 @@ const LogoutButton = styled(Button)({
 });
 function Menu() {
   return (
-    <AppBar position="fixed" style={{ width: '100%', height: '60px' }}>
+    <AppBar position="fixed" style={{ width: '100%', height: '60px' }} sx={{ backgroundColor: '#7A498A' }}>
       <Toolbar>
         <LogoWrapper href="/">
           <img src={teamLogo} alt="teamLogo" style={{ width: "100%", height: "100px" }} />
