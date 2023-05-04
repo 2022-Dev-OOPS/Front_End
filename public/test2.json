@@ -1,0 +1,10 @@
+{
+    "status": "OK",
+    "message": "프론트엔드 통신",
+    "data": 
+	{
+		"date": "2022-09-06T21:00:00",
+		"typName": "hinnamnor",
+		"power": "강"
+	}
+}

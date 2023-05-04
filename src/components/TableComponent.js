@@ -7,26 +7,26 @@ function TableComponent({ data }) {
   const tableRef = useRef(null);
   const titleRef = useRef(null);
 
-  useEffect(() => {
-    function handleScroll() {
-      const tableTop = tableRef.current.getBoundingClientRect().top;
-      const titleHeight = titleRef.current.offsetHeight;
+  // useEffect(() => {
+  //   function handleScroll() {
+  //     const tableTop = tableRef.current.getBoundingClientRect().top;
+  //     const titleHeight = titleRef.current.offsetHeight;
 
-      if (tableTop < titleHeight) {
-        titleRef.current.style.top = `${-tableTop}px`;
-      } else {
-        titleRef.current.style.top = '0';
-      }
-    }
+  //     if (tableTop < titleHeight) {
+  //       titleRef.current.style.top = `${-tableTop}px`;
+  //     } else {
+  //       titleRef.current.style.top = '0';
+  //     }
+  //   }
 
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, []);
   return (
     <div>
-      <Sheet sx={{ height: 300, overflow: 'auto' }}>
+      <Sheet sx={{ height: 700, overflow: 'auto' }}>
         <Table     
         aria-label="table with sticky header"
         stickyHeader
@@ -40,8 +40,9 @@ function TableComponent({ data }) {
           </tr>
         </thead>
           <tbody>
-            {data.map((alert) => (
-              <tr key={alert.tmSeq}>
+            {
+              data.map((alert, index) => (
+              <tr key={`alert-${index}`}>
                 <td>{alert.title}</td>
                 <td width={"40px"}>{alert.region}</td>
               </tr>

@@ -1,18 +1,37 @@
 import React, { useState, useEffect } from 'react';
-import tp from '../img/tp.jpg';
-import Table  from  './TableComponent';
 import axios from 'axios';
 import Card from '@mui/material/Card';
 import { Typography } from '@mui/material';
 import CardMedia from '@mui/material/CardMedia';
 import TableComponent from './TableComponent';
+import ImageComponent from './ImageComponent';
 
 export default function FlexGrow() {
   const [imagePower, setImagePower] = useState('NULL'); // power 초기값은 'NULL'로 설정
   const [specialAlerts, setSpecialAlerts] = useState([]);
 
+  // useEffect(() => {
+  //   axios.get(`${process.env.REACT_APP_API_URL}/api/load`)
+  //     .then(response => {
+  //       setSpecialAlerts(response.data.data);
+  //     })
+  //     .catch(error => {
+  //       console.error(error);
+  //     });
+  // }, []);
+  // useEffect(() => {
+  //   axios.get(`${process.env.REACT_APP_API_URL}/api/power`)
+  //     .then(response => {
+  //       setImagePower(response.data.power);
+  //       console.log('LogTEST : '+response.data);
+  //     })
+  //     .catch(error => {
+  //       console.error(error);
+  //     });
+  // }, []);  
+
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_API_URL}/api/load`)
+    axios.get('test.json')
       .then(response => {
         setSpecialAlerts(response.data.data);
       })
@@ -22,19 +41,18 @@ export default function FlexGrow() {
   }, []);
 
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_API_URL}/api/power`)
+    axios.get('test2.json')
       .then(response => {
-        setImagePower(response.data.power);
+        setImagePower(response.data.data.power);
         console.log('LogTEST : '+response.data);
       })
       .catch(error => {
         console.error(error);
       });
-  }, []);
+  }, []);  
   return (
-    <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-    <div style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
-      <Card sx={{ width: '450px', height: '310px', m: '16px', ml : '32px' }}>
+    <div style={{ width: '100%',  display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
+      {/* <Card sx={{ width: '450px', height: '310px', m: '16px', ml : '32px' }}>
         <Typography variant="h5" component="div" fontWeight="bold" sx={{ m: 2, textAlign: 'left'}}>
           태풍 경로
         </Typography>
@@ -43,44 +61,66 @@ export default function FlexGrow() {
           image={tp}
           alt="태풍 사진"
         />
+      </Card> */}
+      <Card sx={{ width: '504px', height: '700px', m: '16px', mr: '30px', ml: '32px' }}>
+        <TableComponent data={specialAlerts} />
       </Card>
-      <Card sx={{ width: '260px', height: '205px', m: '16px'}}>
+
+
+      <div style={{display: 'flex', flexDirection: 'column'}}>
+      <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
+      <Card sx={{ width: '320px', height: '240px', m: '16px', mr: '30px'}}>
         <Typography variant="h5" component="div" fontWeight="bold" sx={{ m: 2, textAlign: 'left'}}>
-          부산
+          부산 1지역
         </Typography>
         <CardMedia
           component="video"
           src="https://www.w3schools.com/html/mov_bbb.mp4"
-          autoPlay
+          // autoPlay
           controls
         />
       </Card>
-      <Card sx={{ width: '260px', height: '205px', m: '16px' }}>
+      <Card sx={{ width: '320px', height: '240px', m: '16px', mr: '30px' }}>
         <Typography variant="h5" component="div" fontWeight="bold" sx={{ m: 2, textAlign: 'left'}}>
-          제주
+          제주 1지역
         </Typography>
         <CardMedia
           component="video"
           src="https://www.w3schools.com/html/mov_bbb.mp4"
-          autoPlay
+          // autoPlay
           controls
         />
       </Card>
-      <Card sx={{ width: '260px', height: '205px', m: '16px' }}>
+      <Card sx={{ width: '320px', height: '240px', m: '16px', mr: '32px' }}>
       <Typography variant="h5" component="div" fontWeight="bold" sx={{ m: 2, textAlign: 'left'}}>
-        부산
+        마산 1지역
       </Typography>
       <CardMedia
         component="video"
         src="https://www.w3schools.com/html/mov_bbb.mp4"
-        autoPlay
+        // autoPlay
         controls
       />
-    </Card>
+      </Card>
+      </div>
+
+      <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
+      <Card sx={{ width: '600px', height: '400px', m: '16px', mr: '30px',mt:'44px'}}>
+      <Typography variant="h5" component="div" fontWeight="bold" sx={{ m: 2, textAlign: 'left'}}>
+        위험도
+      </Typography>
+      <ImageComponent power={imagePower}/>
+      </Card>
+      <Card sx={{ width: '406px', height: '400px', m: '16px', mr: '30px',mt:'44px'}}>
+
+      </Card>
+      </div>
+      </div>
+
+
+     
+     
     </div>
-    <Card sx={{ width: '504px', height: '310px', m: '16px' }}>
-      <TableComponent data={specialAlerts} />
-    </Card>
-  </div>
+
   );
 }

@@ -4,7 +4,6 @@ import '../css/DashBoard.css';
 import SubComponent from './SubComponent';
 import tp from '../img/tp.jpg';
 import Table  from  './TableComponent';
-import ImageComponent from './ImageComponent';
 
 function Dashboard() {
   const [specialAlerts, setSpecialAlerts] = useState([]);
@@ -41,7 +40,7 @@ function Dashboard() {
       </div>
       <div>
         <Table data={specialAlerts} />
-        <ImageComponent/>
+        {/* <ImageComponent data={imagePower}/> */}
       </div>
     </div>
   );
