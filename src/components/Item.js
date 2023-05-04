@@ -44,7 +44,7 @@ export default function FlexGrow() {
           alt="태풍 사진"
         />
       </Card>
-      <Card sx={{ width: '260px', height: '310px', m: '16px'}}>
+      <Card sx={{ width: '260px', height: '205px', m: '16px'}}>
         <Typography variant="h5" component="div" fontWeight="bold" sx={{ m: 2, textAlign: 'left'}}>
           부산
         </Typography>
@@ -55,7 +55,7 @@ export default function FlexGrow() {
           controls
         />
       </Card>
-      <Card sx={{ width: '260px', height: '310px', m: '16px' }}>
+      <Card sx={{ width: '260px', height: '205px', m: '16px' }}>
         <Typography variant="h5" component="div" fontWeight="bold" sx={{ m: 2, textAlign: 'left'}}>
           제주
         </Typography>
@@ -66,7 +66,7 @@ export default function FlexGrow() {
           controls
         />
       </Card>
-      <Card sx={{ width: '260px', height: '310px', m: '16px' }}>
+      <Card sx={{ width: '260px', height: '205px', m: '16px' }}>
       <Typography variant="h5" component="div" fontWeight="bold" sx={{ m: 2, textAlign: 'left'}}>
         부산
       </Typography>
