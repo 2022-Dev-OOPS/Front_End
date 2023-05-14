@@ -5,10 +5,13 @@ import { Typography } from '@mui/material';
 import CardMedia from '@mui/material/CardMedia';
 import TableComponent from './TableComponent';
 import ImageComponent from './ImageComponent';
+import WallCountComponent from './WallCountComponent';
+
 
 export default function FlexGrow() {
   const [imagePower, setImagePower] = useState('NULL'); // power 초기값은 'NULL'로 설정
   const [specialAlerts, setSpecialAlerts] = useState([]);
+  const [wallCheck, setWallCheck] = useState([]); // power 초기값은 'NULL'로 설정
 
   // useEffect(() => {
   //   axios.get(`${process.env.REACT_APP_API_URL}/api/load`)
@@ -44,6 +47,16 @@ export default function FlexGrow() {
     axios.get('test2.json')
       .then(response => {
         setImagePower(response.data.data.power);
+        console.log('LogTEST : '+response.data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }, []);  
+  useEffect(() => {
+    axios.get('test3.json')
+      .then(response => {
+        setWallCheck(response.data.data);
         console.log('LogTEST : '+response.data);
       })
       .catch(error => {
@@ -112,14 +125,10 @@ export default function FlexGrow() {
       <ImageComponent power={imagePower}/>
       </Card>
       <Card sx={{ width: '406px', height: '400px', m: '16px', mr: '30px',mt:'44px'}}>
-
+        <WallCountComponent data={wallCheck}/>
       </Card>
       </div>
       </div>
-
-
-     
-     
     </div>
 
   );
