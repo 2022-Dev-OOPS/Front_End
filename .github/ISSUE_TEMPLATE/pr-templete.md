@@ -1,5 +1,5 @@
 ---
-name: Issue templete
+name: PR templete
 about: Dev_OOPS!팀 FrontEnd templete
 title: ''
 labels: ''
