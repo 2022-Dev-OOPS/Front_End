@@ -12,8 +12,8 @@ function App() {
     <Menu/>
     <div style={{ marginTop: 92 }}></div>
       <main>
-        {/* <Dashboard /> */}
-        <FlexGrow />
+        <Dashboard />
+        {/* <FlexGrow /> */}
       </main>
     </div>
   );
