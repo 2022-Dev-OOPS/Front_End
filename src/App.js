@@ -1,20 +1,21 @@
-import './App.css';
 import React from 'react';
-import Dashboard from './components/DashBoard';
+import './App.css';
+import { Routes, Route, Link } from 'react-router-dom';
+import Dashboard from './components/DashBoard'
 import Menu from './components/Menu';
-import FlexGrow from './components/Item';
-
+import TeamTable from './components/TeamTable';
+import Footer from './components/Footer';
+import studentData from './components/studentData';
 
 function App() {
-  
   return (
     <div className="App">
-    <Menu/>
-    <div style={{ marginTop: 92 }}></div>
-      <main>
-        {/* <Dashboard /> */}
-        <FlexGrow />
-      </main>
+      <Menu />
+      <Routes>
+        <Route exact path="/" element={<Dashboard />} />
+        <Route path="/teamtable" element={<TeamTable data={studentData} />} />
+      </Routes>
+      <Footer />
     </div>
   );
 }

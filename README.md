@@ -1,70 +1,24 @@
-# Getting Started with Create React App
+# 공공API를 이용한 자동화 시스템 대시보드
+### 해당 프로젝트는 Dev.OOPS!팀의 공공API를 이용한 자동화시스템의 대시보드입니다.
+![image](https://github.com/2022-Dev-OOPS/Front_End/assets/75216723/c43a160f-219e-4f8e-95af-bb76b18e1126)
+(프로토 타입)
+# 대시보드 개발 이유
+현재 원격에서 제어하고있는 환경들에 점검이 잘 이루어지지 않고 있다.
+실제 2023년 많은 폭우가 왔을때 터널에 설치되있는 유압기(?)가 작동하지 않아 터널이 수몰되는 사건이 발생하였다. 이를 관측할 수 있는 방법이 없었기 때문에 생긴 문제라고 생각한다. 
+따라서 Dev.OOPS!팀의 공공API를 이용한 자동화 시스템에는 중앙에서 상황을 관제할 수 있는 대시보드를 제시한다.
+# 대시보드 이용시 장점
+~~~~
+1. 원격 관측
+2. 데이터 시각화
+~~~~
+# 사용 라이브러리
+<img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black">
+</br>
+<img src="https://img.shields.io/badge/mui-007FFF?style=for-the-badge&logo=mui&logoColor=white">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# 전체 시스템 아키텍처
+![Alt text](image.png)
+# 대시보드 기능
+1. 실시간 관측 데이터 열람
+2. 각 지역의 CCTV확인가능.
+3. HLS 서버 사용으로 CCTV다중 접속. 1
