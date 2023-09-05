@@ -6,9 +6,9 @@ import { Typography } from '@mui/material';
 // no chart will be rendered.
 // website examples showcase many properties,
 // you'll often use just a few of them.
-const WallCountComponent = ({ data /* see data tab */ }) => (
+const WallCountComponent = ({ data }) => (
     <>
-        <Typography variant="h5" component="div" fontWeight="bold" sx={{ m: 2, textAlign: 'left'}}>
+        <Typography variant="h5" component="div" fontWeight="bold" sx={{ m: 2, textAlign: 'left' }}>
             차수벽 사용률
         </Typography>
         <ResponsivePie
@@ -69,13 +69,11 @@ const WallCountComponent = ({ data /* see data tab */ }) => (
                     match: {
                         id: '고장난 차수벽'
                     },
-                    id: 'dots'
                 },
                 {
                     match: {
                         id: '정상동작 차수벽'
                     },
-                    id: 'dots'
                 },
                 {
                     match: {
@@ -107,7 +105,7 @@ const WallCountComponent = ({ data /* see data tab */ }) => (
                             }
                         }
                     ],
-                    
+
                 }
             ]}
         />
