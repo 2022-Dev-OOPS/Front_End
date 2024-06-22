@@ -1,4 +1,4 @@
-# 공공API를 이용한 자동화 시스템 대시보드
+# Open API를 이용한 차수 자동화 시스템 대시보드
 ### 해당 프로젝트는 Dev.OOPS!팀의 공공API를 이용한 자동화시스템의 대시보드입니다.
 ![image](https://github.com/2022-Dev-OOPS/Front_End/assets/75216723/c43a160f-219e-4f8e-95af-bb76b18e1126)
 (프로토 타입)
@@ -13,12 +13,11 @@
 ~~~~
 # 사용 라이브러리
 <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black">
-</br>
 <img src="https://img.shields.io/badge/mui-007FFF?style=for-the-badge&logo=mui&logoColor=white">
 
 # 전체 시스템 아키텍처
 ![Alt text](image.png)
 # 대시보드 기능
 1. 실시간 관측 데이터 열람
-2. 각 지역의 CCTV확인가능.
-3. HLS 서버 사용으로 CCTV다중 접속. 1
+2. 각 지역의 CCTV확인 가능
+3. HLS 서버 사용으로 CCTV다중 접속
