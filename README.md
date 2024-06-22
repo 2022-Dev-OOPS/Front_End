@@ -1,5 +1,5 @@
 # Open API를 이용한 차수 자동화 시스템 대시보드
-### 해당 프로젝트는 Dev.OOPS!팀의 공공API를 이용한 자동화시스템의 대시보드입니다.
+### 해당 프로젝트는 Dev.OOPS!팀의  Open API를 이용한 차수 자동화 시스템의 대시보드입니다.
 ![image](https://github.com/2022-Dev-OOPS/Front_End/assets/75216723/c43a160f-219e-4f8e-95af-bb76b18e1126)
 (프로토 타입)
 # 대시보드 개발 이유
